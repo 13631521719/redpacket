@@ -1,13 +1,13 @@
-package com.dy.game.rpservice;
+package com.dy.game.rpJob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RpApiApplication {
+public class RpJobApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RpApiApplication.class, args);
+        SpringApplication.run(RpJobApplication.class, args);
     }
 
 }
