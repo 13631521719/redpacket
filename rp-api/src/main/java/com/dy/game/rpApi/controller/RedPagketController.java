@@ -7,6 +7,7 @@ import com.dy.game.rpservice.service.RedPagketService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,14 +28,13 @@ public class RedPagketController {
     @ApiOperation(value = "发红包")
     @RequestMapping(value = "/redPagket/sendRedPagket",method = RequestMethod.POST)
     public @ResponseBody
-    WebResponse sendRedPagket(@RequestBody SendRedPagketParam sendRedPagketParam)throws Exception{
+    WebResponse sendRedPagket(@RequestBody @Validated SendRedPagketParam sendRedPagketParam)throws Exception{
         return redPagketService.sendRedPagket(sendRedPagketParam);
     }
 
     @ApiOperation(value = "抢红包")
     @RequestMapping(value = "/redPagket/gradRedPagket",method = RequestMethod.POST)
-    public @ResponseBody WebResponse gradRedPagket(@RequestBody GrabRedPagketParam grabRedPagketParam)throws Exception{
-
+    public @ResponseBody WebResponse gradRedPagket(@RequestBody @Validated GrabRedPagketParam grabRedPagketParam)throws Exception{
         return redPagketService.gradRedPagket(grabRedPagketParam);
     }
 }

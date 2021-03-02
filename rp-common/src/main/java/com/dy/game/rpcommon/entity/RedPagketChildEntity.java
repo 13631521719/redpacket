@@ -3,7 +3,7 @@ package com.dy.game.rpcommon.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "rp_red_pagket_child", schema = "redpagket")
@@ -27,6 +27,6 @@ public class RedPagketChildEntity {
     private Integer status;
     @Basic
     @Column(name = "got_time",columnDefinition = "领取时间")
-    private Timestamp gotTime;
+    private Date gotTime;
 
 }
